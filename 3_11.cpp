@@ -6,6 +6,7 @@ int main(){
     std::vector<std::string> base = {"paper", "rock", "scisors"};
     std::string userChoice;
     bool isGameOn = true;
+    std::string pcChoice;
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -15,16 +16,18 @@ int main(){
         std::cout<<"Whats your choice? (rock, paper, scisors): ";
         std::cin>>userChoice;
 
+        pcChoice = base[dist(gen)];
+
         if(userChoice == "paper"){
-            if(base[dist(gen)] == "paper"){
+            if(pcChoice == "paper"){
                 std::cout<<"Your oponent choosed paper."<<std::endl;
                 std::cout<<"Its a draw.\n";
             }
-            else if(base[dist(gen)] == "rock"){
+            else if(pcChoice == "rock"){
                 std::cout<<"Your oponent choosed rock."<<std::endl;
                 std::cout<<"You won.\n";
             }
-            else if(base[dist(gen)] == "scisors"){
+            else if(pcChoice == "scisors"){
                 std::cout<<"Your oponent choosed scisors."<<std::endl;
                 std::cout<<"You lost.\n";
             }
@@ -33,15 +36,15 @@ int main(){
             }
         }
         else if(userChoice == "rock"){
-            if(base[dist(gen)] == "paper"){
+            if(pcChoice == "paper"){
                 std::cout<<"Your oponent choosed paper."<<std::endl;
                 std::cout<<"You lost.\n";
             }
-            else if(base[dist(gen)] =="rock"){
+            else if(pcChoice =="rock"){
                 std::cout<<"Your oponent choosed rock."<<std::endl;
                 std::cout<<"Its a draw.\n";
             }
-            else if(base[dist(gen)] == "scisors"){
+            else if(pcChoice == "scisors"){
                 std::cout<<"Your oponent choosed scisors."<<std::endl;
                 std::cout<<"You won.\n";
             }
@@ -50,15 +53,15 @@ int main(){
             }
         }
         else if(userChoice == "scisors"){
-            if(base[dist(gen)] == "paper"){
+            if(pcChoice == "paper"){
                 std::cout<<"Your oponent choosed paper."<<std::endl;
                 std::cout<<"You won.\n";
             }
-            else if(base[dist(gen)] == "rock"){
+            else if(pcChoice == "rock"){
                 std::cout<<"Your oponent choosed rock."<<std::endl;
                 std::cout<<"You lost.\n";
             }
-            else if(base[dist(gen)] == "scisors"){
+            else if(pcChoice == "scisors"){
                 std::cout<<"Your oponent choosed scisors."<<std::endl;
                 std::cout<<"Its a draw.\n";
             }

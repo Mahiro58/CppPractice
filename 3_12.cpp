@@ -6,7 +6,7 @@ int main(){
     
     std::cout<<"Podaj liczbe: ";
     for(int liczba; std::cin>>liczba;){
-        if(liczba == 2 || liczba == 3){
+        if(liczba == 2 || liczba == 3 || liczba == 5 || liczba == 7){
             std::cout<<"Dodano liczbe "<<liczba<< " do zbioru liczb pierwszych.'n";
             primes.push_back(liczba);
         }

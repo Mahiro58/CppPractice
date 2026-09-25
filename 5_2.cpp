@@ -83,39 +83,20 @@ double primary()
 
 int main()
 {
-    std::cout<<"Wpisz wyrazenie (+ - * /): ";
-    int lval = 0;
-    int rval = 0;
-    int res = 0;
-    std::cin>>lval;
-    if(!std::cin) std::cerr<<"Brak poczatkowego argumentu.\n";
-
-    for(char op; std::cin>>op;)
-    {
-        if (op != 'x') std::cin>>rval;
-        if (!std::cin) std::cerr<<"Brak drugiego wyrazenia argumentu.\n";
-        switch (op)
+    try {
+        while(std::cin)
         {
-        case '+':
-            lval += rval;
-            break;
-        
-        case '-':
-            lval -= rval;
-            break;
-
-        case '*':
-            lval *= rval;
-            break;
-
-        case '/':
-            lval /= rval;
-            break;
-            
-        default:
-            std::cout<<"Wynik: "<<lval<<std::endl;            
-            break;
+            std::cout<<"= "<<expression()<<std::endl;
         }
     }
+    catch (std::exception& e) {
+        std::cerr<<e.what()<<std::endl;
+        return 1; 
+    }
+    catch (...) {
+        std::cerr<<"Wyjatek \n";
+        return 2;
+    }
+
     return 0;
 }

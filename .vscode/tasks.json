@@ -10,7 +10,8 @@
                 "-I/home/mahiro/Code/Cpp/text_lib",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-std=c++23"
             ],
             "options": {
                 "cwd": "${fileDirname}"
